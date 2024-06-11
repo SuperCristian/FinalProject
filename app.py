@@ -34,7 +34,7 @@ st.sidebar.header("Select Feature")
 feature = st.sidebar.selectbox("Choose a feature", df.columns)
 
 # Sidebar for additional options
-st.sidebar.header("Additional Options")
+st.sidebar.header("More Options")
 show_raw_data = st.sidebar.checkbox("Show raw data")
 show_statistics = st.sidebar.checkbox("Show statistics")
 
@@ -62,6 +62,23 @@ ___With the Help of ChatGPT___
 ''')
 
 # Main content
+
+# Columns for plots
+col1, col2 = st.columns(2)
+
+# Distribution plot
+with col1:
+    st.subheader("Distribution Plot")
+    fig, ax = plt.subplots()
+    sns.histplot(df[feature], kde=True, ax=ax)
+    st.pyplot(fig)
+
+# Box plot
+with col2:
+    st.subheader("Box Plot")
+    fig, ax = plt.subplots()
+    sns.boxplot(x=df[feature], ax=ax)
+    st.pyplot(fig)
 
 # Columns for layout
 col1, col2 = st.columns(2)
@@ -94,22 +111,6 @@ st.pyplot(fig)
 # Plotting
 st.header(f"Distribution and Box Plot of {feature}")
 
-# Columns for plots
-col1, col2 = st.columns(2)
-
-# Distribution plot
-with col1:
-    st.subheader("Distribution Plot")
-    fig, ax = plt.subplots()
-    sns.histplot(df[feature], kde=True, ax=ax)
-    st.pyplot(fig)
-
-# Box plot
-with col2:
-    st.subheader("Box Plot")
-    fig, ax = plt.subplots()
-    sns.boxplot(x=df[feature], ax=ax)
-    st.pyplot(fig)
 
 # Show statistics
 if show_statistics:
