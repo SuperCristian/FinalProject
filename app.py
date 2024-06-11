@@ -15,7 +15,7 @@ local_css("style.css")
 
 # Title of the app
 st.title(":bar_chart: Simple Obesity Category Site")
-st.write("This is a simple website for the Final Project in ITC130. These are the codes on GitHub 👉[Github Link](https://www.kaggle.com/datasets/mrsimple07/obesity-prediction/data) ")
+st.write("This is a simple website for the Final Project in ITC130. These are the codes on GitHub 👉[Github Link](https://github.com/SuperCristian/FinalProject) ")
 
 
 # Load your dataset
